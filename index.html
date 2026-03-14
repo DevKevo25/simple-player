@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Fixed Google Fonts (Poppins) -->
+    <link href="https://googleapis.com" rel="stylesheet">
+
+    <!-- Fixed Font Awesome 4.7.0 CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navs">
+            <button>
+                <i class="fa fa-arrow-left"></i>
+            </button>
+            <p>PLAYING NOW</p>
+            <button onclick="document.querySelector('.nav-content').classList.toggle('show')">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div><br>
+        
+        <nav class="nav-content">
+            <a href="">
+              <i class="fa fa-github"></i>
+              <span>Github</span>
+            </a>
+            <a href="#">
+              <i class="fa fa-youtube"></i>
+              <span>Youtube</span>
+            </a>
+        </nav>
+
+        <div class="image-container">
+            <img id="thumbnail" src="images.jpg" alt="">
+        </div><br>
+
+        <div class="title-display">
+            <h2 id="songCount"></h2><br>
+            <p id="description"></p>
+        </div>
+
+        <div class="length">
+            <div class="time">
+                <span id="cTime">00:00</span>
+                <span id="mLength">00:00</span>
+            </div>
+            <input type="range" id="adjustRange" min="0" step=".1" value="0">
+        </div>
+
+        <div class="control-btns">
+            <button id="prevBtn">
+                <i class="fa fa-backward"></i>
+            </button>
+            <button id="playBtn">
+                <i class="fa fa-play"></i>
+            </button>
+            <button id="nextBtn">
+                <i class="fa fa-forward"></i>
+            </button>
+        </div><br>
+
+        <div class="audio-upload">
+            <audio id="myAudio"  style="display: none;"></audio>
+            <label>
+                upload
+                <input id="audios" type="file" accept="audio/*" style="display: none;" multiple>
+            </label>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
