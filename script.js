@@ -111,3 +111,12 @@ myAudio.addEventListener('timeupdate', () => {
 adjustRange.addEventListener("input", (e) => {
   myAudio.currentTime = Math.floor((e.target.value / 100) * myAudio.duration)
 })
+
+// OFFLINE MODE 
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(() => console.log("Service Worker registered"))
+      .catch(err => console.log("SW failed:", err));
+  });
+}
